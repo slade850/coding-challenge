@@ -1,12 +1,9 @@
-#navList{
-    transition: 300ms;
-    opacity: 0;
-    list-style: none;
-    height: 0%;
-    line-height: 0em;
-}
-#navList.active{
-    opacity: 1;
-    height: 100%;
-    line-height: 1.5em;
+#myBigButton{
+    color: aquamarine;
+    background-color: black;
+    height: 30px;
+    width: 60px;
+    box-shadow: black 1px 1px 3px;
+    border-radius: 10px;
+    border-style: none;
 }
