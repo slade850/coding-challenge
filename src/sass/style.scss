@@ -1,0 +1,12 @@
+#navList{
+    transition: 300ms;
+    opacity: 0;
+    list-style: none;
+    height: 0%;
+    line-height: 0em;
+}
+#navList.active{
+    opacity: 1;
+    height: 100%;
+    line-height: 1.5em;
+}
