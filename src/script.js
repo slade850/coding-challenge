@@ -1,13 +1,13 @@
 const bigButton = document.getElementById('myBigButton');
+const autoWrite = document.getElementById('autoWrite');
 
-const createToast = () => {
-    const toats = document.createElement('div');
-    const p = document.createElement('p');
-    document.body.appendChild(toats);
-    p.innerText = "good job!";
-    toats.appendChild(p);
-    setTimeout(() => document.body.removeChild(toats), 3000)
+const text = "voici un superbe text qui ne sert a rien mais c'est bien!"
+
+const createText = () => {
+    text.split('').forEach((t, i) => {
+        setTimeout(autoWrite.innerText(text.slice(0,i)), 100)
+    })
 }
 
 
-bigButton.addEventListener('click', createToast)
+bigButton.addEventListener('click', createText)
