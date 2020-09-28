@@ -1,13 +1,8 @@
 const bigButton = document.getElementById('myBigButton');
 
-const createToast = () => {
-    const toats = document.createElement('div');
-    const p = document.createElement('p');
-    document.body.appendChild(toats);
-    p.innerText = "good job!";
-    toats.appendChild(p);
-    setTimeout(() => document.body.removeChild(toats), 3000)
+const changeBackground = () => {
+    document.body.style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
 }
 
 
-bigButton.addEventListener('click', createToast)
+bigButton.addEventListener('click', changeBackground)
