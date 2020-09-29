@@ -3,11 +3,15 @@ const autoWrite = document.getElementById('autoWrite');
 
 const text = "voici un superbe text qui ne sert a rien mais c'est bien!"
 
+let index = 0;
+
 const createText = () => {
-    text.split('').forEach((t, i) => {
-        setTimeout(autoWrite.innerText(text.slice(0,i)), 100)
-    })
+    index <= text.length ? index++ : index = 1;
+    autoWrite.innerText = text.slice(0,index)
 }
 
 
-bigButton.addEventListener('click', createText)
+bigButton.addEventListener('click', () => {
+    const interval = setInterval(createText, 100);
+    if(index == text.length){ clearInterval(interval)};
+}, true)
