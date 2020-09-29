@@ -1,14 +1,29 @@
-#myBigButton{
-    color: aquamarine;
-    background-color: black;
-    height: 30px;
-    width: 60px;
-    box-shadow: black 1px 1px 3px;
-    border-radius: 10px;
-    border-style: none;
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#autoWrite{
-    position: relative;
-    margin: auto;
-    top: 50%;
+
+.box{
+    opacity: 0;
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    transform: translate3d(0,10%,0);
+    transition: 0.5s ease;
+
+    &.visible{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+$sections: 4;
+$colors: green, blue, red, yellow;
+
+@for $i from 0 to $sections {
+    section:nth-child(#{$i + 1}) {
+        background: nth($colors, $i + 1);
+    }
 }

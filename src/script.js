@@ -1,13 +1,11 @@
-const bigButton = document.getElementById('myBigButton');
-const autoWrite = document.getElementById('autoWrite');
+const boxes = document.querySelectorAll('.box');
 
-const text = "voici un superbe text qui ne sert a rien mais c'est bien!"
+const observer = new IntersectionObserver(callback);
 
-const createText = () => {
-    text.split('').forEach((t, i) => {
-        setTimeout(autoWrite.innerText(text.slice(0,i)), 100)
-    })
+function callback(entries){
+    entries.forEach(entry => {
+        if(entry.isIntersecting){entry.target.classList.add('visible')};
+    });
 }
 
-
-bigButton.addEventListener('click', createText)
+boxes.forEach(box => observer.observe(box));
